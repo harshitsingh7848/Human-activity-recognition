@@ -1,6 +1,6 @@
 # Human Activity Recognition on Edge Devices
 
-CNN-LSTM and GRU classifiers trained on UCI HAR and WISDM, compressed via PTQ, QAT, and structured pruning, and deployed on Android (Pixel 6) using TensorFlow Lite — achieving **93% accuracy at 7.8 ms latency** from a **0.22 MB** model.
+CNN-LSTM and GRU classifiers trained on UCI HAR and WISDM, compressed via PTQ, QAT, and structured pruning, and deployed on Android (Pixel 6) using TensorFlow Lite, achieving **93% accuracy at 7.8 ms latency** from a **0.22 MB** model.
 
 ---
 
@@ -25,8 +25,8 @@ This project explores end-to-end compression and edge deployment of deep learnin
 
 Two sequence classifiers were trained and compared:
 
-- **CNN-LSTM** — Convolutional layers for local feature extraction, followed by LSTM for temporal modeling
-- **GRU** — Gated Recurrent Unit as a lightweight alternative to LSTM for on-device inference
+- **CNN-LSTM** : Convolutional layers for local feature extraction, followed by LSTM for temporal modeling
+- **GRU** : Gated Recurrent Unit as a lightweight alternative to LSTM for on-device inference
 
 ---
 
@@ -34,7 +34,7 @@ Two sequence classifiers were trained and compared:
 
 | Stage | Technique | Description |
 |---|---|---|
-| Baseline | Full-precision float32 | Starting point — 0.84 MB |
+| Baseline | Full-precision float32 | Starting point : 0.84 MB |
 | PTQ | Post-Training Quantization | int8 weights, no retraining required |
 | QAT | Quantization-Aware Training | Simulates quantization during fine-tuning for better accuracy |
 | Pruning | Structured Pruning | Removes entire filters/channels; reduces parameter count |
@@ -67,28 +67,28 @@ Place UCI HAR and WISDM datasets under `data/` before running notebooks.
 
 All notebooks are under `notebooks/`. Run them in order:
 
-### Step 1 — Data Preprocessing
+### Step 1 : Data Preprocessing
 
 ```
 notebooks/01_data_preprocessing.ipynb
 ```
 Loads UCI HAR and WISDM, normalizes sensor signals, segments into sliding windows.
 
-### Step 2 — Model Training
+### Step 2 : Model Training
 
 ```
 notebooks/02_model_training.ipynb
 ```
 Trains CNN-LSTM and GRU classifiers. Saves full-precision `.h5` models to `models/`.
 
-### Step 3 — Compression
+### Step 3 : Compression
 
 ```
 notebooks/03_compression.ipynb
 ```
 Applies PTQ, QAT, and structured pruning. Converts to `.tflite` format for Android deployment.
 
-### Step 4 — Evaluation
+### Step 4 : Evaluation
 
 ```
 notebooks/04_evaluation.ipynb
