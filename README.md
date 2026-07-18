@@ -1,6 +1,6 @@
 # Human Activity Recognition on Edge Devices
 
-CNN-LSTM and GRU classifiers trained on UCI HAR and WISDM, compressed via PTQ, QAT, and structured pruning, and deployed on Android (Pixel 6) using TensorFlow Lite — achieving **93% accuracy at 7.8 ms latency** from a **0.22 MB** model.
+CNN-LSTM and GRU classifiers trained on UCI HAR and WISDM, compressed via PTQ, QAT, and structured pruning, and deployed on Android (Pixel 6) using TensorFlow Lite, achieving **93% accuracy at 7.8 ms latency** from a **0.22 MB** model.
 
 ---
 
